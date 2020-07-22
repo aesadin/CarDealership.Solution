@@ -7,6 +7,7 @@ namespace CarDealership.Models
     public string MakeModel { get; set; }
     public int Price { get; set; }
     public int Miles { get; set; }
+    public int Id { get; }
     private static List<Car> _listOfCars = new List<Car> {};
 
 //Car newCar = new Car(string Honda, int 3000, int 200,000)
@@ -17,10 +18,11 @@ namespace CarDealership.Models
       Price = price;
       Miles = miles;
       _listOfCars.Add(this);
+      Id = _listOfCars.Count;
 
     }
 
-    public static  List<Car> GetCars()
+    public static List<Car> GetCars()
     {
       return _listOfCars;
     }
